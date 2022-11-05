@@ -22,9 +22,10 @@ class CollectionViewController: UIViewController {
     
     private var currentSelectedIndex = 0
     
-    private var treeImages: [UIImage] = {
+    private var treeImages: [UIImage] {
         var arr: [UIImage] = []
         
+        updateUDCollection()
         var imgs = UserDefaults.standard.object(forKey: "collectionImages") as! [String]
         print(imgs)
         
@@ -42,13 +43,13 @@ class CollectionViewController: UIViewController {
         print(imgs.count)
                 
         return arr
-    }()
+    }
     
-    private var treeNames: [String] = {
+    private var treeNames: [String] {
         let kek = UserDefaults.standard.object(forKey: "collectionNames") as! [String]
         print(kek)
         return kek
-    }()
+    }
     
     private var noOfCards : Int {
         get {

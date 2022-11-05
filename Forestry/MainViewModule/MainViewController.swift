@@ -61,8 +61,16 @@ class MainViewController: UIViewController {
         view.layer.borderWidth = 2.0
         view.layer.borderColor = UIColor.black.cgColor
         
-        
         return view
+    }()
+    
+    private lazy var treeName: UILabel = {
+        let label = UILabel()
+        let font = UIFont.systemFont(ofSize: 34, weight: .bold)
+        label.font = font
+        label.textAlignment = .center
+        
+        return label
     }()
     
     override func viewDidLoad() {
@@ -73,7 +81,10 @@ class MainViewController: UIViewController {
             treeView
         )
         
-        treeView.addSubview(myTree)
+        treeView.addSubviews(
+            myTree,
+            treeName
+        )
         
         view.backgroundColor = mainGreen
 
@@ -83,6 +94,7 @@ class MainViewController: UIViewController {
     private func getCurrentfavorite() -> UIImage {
         let fav_index = getFavorite()
         
+        updateUDCollection()
         let imgs = UserDefaults.standard.object(forKey: "collectionImages") as! [String]
         var arr: [UIImage] = []
         for img in imgs {
@@ -94,15 +106,33 @@ class MainViewController: UIViewController {
             }
         }
         
+        if fav_index >= imgs.count {
+            return UIImage(named: "gray")!
+        }
+        
         let treeImg = arr[fav_index]
         
         return treeImg
+    }
+    
+    private func getCurrentFavoriteName() -> String {
+        let fav_index = getFavorite()
+        
+        updateUDCollection()
+        let names = UserDefaults.standard.object(forKey: "collectionNames") as! [String]
+        
+        if fav_index >= names.count {
+            return "Scan a tree!"
+        }
+        
+        return names[fav_index]
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         myTree.image = getCurrentfavorite()
+        treeName.text = getCurrentFavoriteName()
     }
     
     override func viewWillLayoutSubviews() {
@@ -135,6 +165,14 @@ class MainViewController: UIViewController {
             width: treeView.frame.width - 2 * Constants.matchCellMargin,
             height: (treeView.frame.width - 2 * Constants.matchCellMargin) * 1.1
         )
+        
+        treeName.frame = CGRect(
+            x: 0,
+            y: myTree.frame.maxY + Constants.matchCellMargin,
+            width: myTree.frame.width,
+            height: 30
+        )
+        treeName.center.x = myTree.center.x
 
         layout.invalidateLayout()
     }

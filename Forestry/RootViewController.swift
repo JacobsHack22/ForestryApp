@@ -26,7 +26,7 @@ class RootViewController: UITabBarController {
         vc.title = CollectionViewController.Constants.tabBarTitle
         return vc
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground

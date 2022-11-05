@@ -32,9 +32,9 @@ class ScanViewPresenter: ScanViewPresenterProtocol {
     
     func sendPhoto(image: UIImage) {
         debugPrint("Sending photo to server.")
-        let img = UIImage(named: "tree")
-        addToUDcollection(img: img, name: "tree")
-        
+        let img = UIImage(named: "Tree")
+        addToUDcollection(img: img, name: "Tree")
+//        emptyCollections()
         
         showAlert()
     }

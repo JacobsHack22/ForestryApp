@@ -24,6 +24,13 @@ func updateUDCollection() {
     }
 }
 
+func emptyCollections() {
+    let userDefaults = UserDefaults.standard
+    userDefaults.removeObject(forKey: "collectionImages")
+    userDefaults.removeObject(forKey: "collectionNames")
+    userDefaults.removeObject(forKey: "favoriteTree")
+}
+
 func addToUDcollection(img: UIImage?, name: String) {
     if let data = img?.pngData() {
         // Create URL
@@ -66,7 +73,7 @@ func setFavorite(_ ind: Int) {
 
 func getFavorite() -> Int {
     let userDefaults = UserDefaults.standard
-    return userDefaults.object(forKey: "favoriteTree") as! Int
+    return (userDefaults.object(forKey: "favoriteTree") as! Int?) ?? 0
 }
 
 let mainGreen = UIColor(red: 0, green: 0.4863, blue: 0.1922, alpha: 1.0)

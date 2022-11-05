@@ -190,7 +190,7 @@ class ScanViewController: UIViewController {
             scanViewPresenter?.sendPhoto(image: image)
         }
     }
-    
+        
     @objc func buttonClicked() {
         let ActionSheet = UIAlertController(title: nil, message: "Select Photo", preferredStyle: .actionSheet)
 
