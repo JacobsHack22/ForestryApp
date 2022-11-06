@@ -37,7 +37,7 @@ class RootViewController: UITabBarController {
             items[i].image = UIImage(systemName: ["list.bullet.rectangle.fill", "house", "plus"][i])
         }
         
-        self.tabBar.tintColor = .systemBlue
+        self.tabBar.tintColor = .black
         self.view.backgroundColor = .green
     }
 

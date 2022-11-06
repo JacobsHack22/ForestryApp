@@ -58,6 +58,8 @@ class ScanViewController: UIViewController {
     private lazy var choosePhotoButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 20
+        button.layer.borderWidth = 2.0
+        button.layer.borderColor = UIColor.black.cgColor
         button.backgroundColor = .white
         button.setTitle("Choose Image", for: .normal)
         button.titleLabel?.font =  UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)
@@ -73,8 +75,8 @@ class ScanViewController: UIViewController {
         view.layer.cornerRadius = 10
         view.layer.borderWidth = 2.0
         view.contentMode = .scaleAspectFit
-        view.backgroundColor = .green
-        view.layer.borderColor = UIColor.red.cgColor
+        view.backgroundColor = .white
+        view.layer.borderColor = UIColor.black.cgColor
         
         return view
     }()
@@ -98,6 +100,8 @@ class ScanViewController: UIViewController {
         
         button.layer.cornerRadius = 20
         button.backgroundColor = .white
+        button.layer.borderWidth = 2.0
+        button.layer.borderColor = UIColor.black.cgColor
         button.setTitle("Send Image", for: .normal)
         button.titleLabel?.font =  UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)
         button.setTitleColor(.black, for: .normal)
@@ -118,7 +122,7 @@ class ScanViewController: UIViewController {
             sendPhotoButton
         )
         
-        view.backgroundColor = .purple
+        view.backgroundColor = mainGreen
         scanViewPresenter?.viewDidLoad()
     }
         

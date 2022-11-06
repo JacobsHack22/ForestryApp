@@ -25,6 +25,8 @@ final class TreeCell: UICollectionViewCell {
         return label
     }()
     
+    var configurationModel: TreeModel? = nil
+    
     private lazy var treeImageView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "healthy")
@@ -59,6 +61,13 @@ final class TreeCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(_ withModel: TreeModel) {
+        configurationModel = withModel
+        
+        treeImageView.image = withModel.image
+        treeLabel.text = withModel.name
+    }
+    
     // MARK: - Override methods
     
     override func layoutSubviews() {
@@ -88,7 +97,7 @@ final class TreeCell: UICollectionViewCell {
             x: 0,
             y: treeImageView.frame.maxY + 10,
             width: mainView.frame.width,
-            height: 15
+            height: 25
         )
     }
 }

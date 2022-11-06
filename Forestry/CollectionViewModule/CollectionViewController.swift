@@ -22,7 +22,39 @@ class CollectionViewController: UIViewController {
     
     private var currentSelectedIndex = 0
     
-    private let noOfCards = 3
+    private var treeImages: [UIImage] = {
+        var arr: [UIImage] = []
+        
+        var imgs = UserDefaults.standard.object(forKey: "collectionImages") as! [String]
+        print(imgs)
+        
+        for img in imgs {
+            var afterEqualsTo = ""
+            if let index = img.range(of: "/", options: .backwards)?.upperBound {
+                let afterEqualsTo = String(img.suffix(from: index)).replacingOccurrences(of: "%20", with: " ")
+                print(afterEqualsTo)
+                if let image = getSavedImage(named: afterEqualsTo) {
+                    arr.append(image)
+                }
+            }
+        }
+        
+        print(imgs.count)
+                
+        return arr
+    }()
+    
+    private var treeNames: [String] = {
+        let kek = UserDefaults.standard.object(forKey: "collectionNames") as! [String]
+        print(kek)
+        return kek
+    }()
+    
+    private var noOfCards : Int {
+        get {
+            treeImages.count
+        }
+    }
     private let layout = UICollectionViewFlowLayout()
     private lazy var treeCollectionView: UICollectionView = {
         layout.scrollDirection = .horizontal
@@ -32,6 +64,12 @@ class CollectionViewController: UIViewController {
         view.showsHorizontalScrollIndicator = false
         view.showsVerticalScrollIndicator = false
         
+        let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
+        longPressedGesture.minimumPressDuration = 0.5
+        longPressedGesture.delegate = self
+        longPressedGesture.delaysTouchesBegan = true
+        view.addGestureRecognizer(longPressedGesture)
+    
         return view
     } ()
     
@@ -68,11 +106,18 @@ class CollectionViewController: UIViewController {
             TreeCell.self,
             forCellWithReuseIdentifier: "treeCell"
         )
-        treeCollectionView.backgroundColor = .green
-        view.backgroundColor = .green
+        treeCollectionView.backgroundColor = mainGreen
+        view.backgroundColor = mainGreen
 
         collectionViewPresenter?.viewDidLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        treeCollectionView.reloadData()
+    }
+    
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -99,6 +144,23 @@ class CollectionViewController: UIViewController {
         )
 
         layout.invalidateLayout()
+        print(treeImages, treeNames, noOfCards)
+        treeCollectionView.reloadData()
+    }
+}
+
+extension CollectionViewController: UIGestureRecognizerDelegate {
+    @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
+        if (gestureRecognizer.state != .began) {
+            return
+        }
+
+        let p = gestureRecognizer.location(in: treeCollectionView)
+
+        if let indexPath = treeCollectionView.indexPathForItem(at: p) {
+            setFavorite(indexPath.row)
+            print(getFavorite())
+        }
     }
 }
 
@@ -119,6 +181,7 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
         let cell = treeCollectionView.dequeueReusableCell(
             withReuseIdentifier: "treeCell", for: indexPath
         ) as! TreeCell
+        cell.configure(TreeModel(image: treeImages[indexPath.row], name: treeNames[indexPath.row]))
         
         return cell
     }

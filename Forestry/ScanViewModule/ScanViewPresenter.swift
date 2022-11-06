@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 import UIKit
 
 protocol ScanViewPresenterProtocol: AnyObject {
@@ -13,11 +14,14 @@ protocol ScanViewPresenterProtocol: AnyObject {
     func sendPhoto(image: UIImage)
 }
 
+struct Response {
+    
+}
+
 class ScanViewPresenter: ScanViewPresenterProtocol {
     private struct LogoutAlertString {
-        static let title = "Are you sure you want to logout?"
-        static let logoutAction = "Logout"
-        static let cancelAction = "Cancel"
+        static let title = "A new tree has been added"
+        static let cancelAction = "Okay"
     }
 
     weak var view: ScanView?
@@ -28,43 +32,21 @@ class ScanViewPresenter: ScanViewPresenterProtocol {
     
     func sendPhoto(image: UIImage) {
         debugPrint("Sending photo to server.")
+        let img = UIImage(named: "tree")
+        addToUDcollection(img: img, name: "tree")
         
-//        let treeType = "Oak"
-//        let treeImage = UIImage(named: "healthy")!
-//
-        let url = URL(string: "https://forestry-367712.ey.r.appspot.com")!
-
-        var request = URLRequest(url: url)
-
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data {
-                let image = UIImage(data: data)
-            } else if let error = error {
-                print("HTTP Request Failed \(error)")
-            }
-        }
-
-        task.resume()
         
-        //view?.newTree(image: treeImage, type: treeType)
-        
-        //showLogoutAlert()
+        showAlert()
     }
     
-    func showLogoutAlert() {
+    func showAlert() {
         let alert = UIAlertController(
             title: LogoutAlertString.title,
             message: nil,
             preferredStyle: .alert
         )
 
-        let logoutAction: (UIAlertAction) -> Void = { _ in self.logout() }
         alert.addAction(UIAlertAction(title: LogoutAlertString.cancelAction, style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: LogoutAlertString.logoutAction, style: .default, handler: logoutAction))
         view?.present(alert: alert)
-    }
-    
-    private func logout() {
-        
     }
 }

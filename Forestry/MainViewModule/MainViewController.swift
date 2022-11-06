@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
         static let headerViewHeight: CGFloat = 140
         static let bottomBarHeight: CGFloat = 80
         static let logoutButtonSide: CGFloat = 34
+        static let marginMainTB: CGFloat = 30
         
         static let matchCellMargin: CGFloat = 16
         
@@ -45,16 +46,63 @@ class MainViewController: UIViewController {
         return label
     }()
     
+    private lazy var myTree: UIImageView = {
+        let view = UIImageView()
+    
+        view.image = getCurrentfavorite()
+        
+        return view
+    }()
+    
+    private var treeView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 10
+        view.layer.borderWidth = 2.0
+        view.layer.borderColor = UIColor.black.cgColor
+        
+        
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubviews(
             headerView,
-            headerLabel
+            headerLabel,
+            treeView
         )
         
-        view.backgroundColor = .cyan
+        treeView.addSubview(myTree)
+        
+        view.backgroundColor = mainGreen
 
         mainViewPresenter?.viewDidLoad()
+    }
+    
+    private func getCurrentfavorite() -> UIImage {
+        let fav_index = getFavorite()
+        
+        let imgs = UserDefaults.standard.object(forKey: "collectionImages") as! [String]
+        var arr: [UIImage] = []
+        for img in imgs {
+            if let index = img.range(of: "/", options: .backwards)?.upperBound {
+                let afterEqualsTo = String(img.suffix(from: index)).replacingOccurrences(of: "%20", with: " ")
+                if let image = getSavedImage(named: afterEqualsTo) {
+                    arr.append(image)
+                }
+            }
+        }
+        
+        let treeImg = arr[fav_index]
+        
+        return treeImg
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        myTree.image = getCurrentfavorite()
     }
     
     override func viewWillLayoutSubviews() {
@@ -72,6 +120,20 @@ class MainViewController: UIViewController {
             y: headerView.frame.maxY - 60.0,
             width: view.frame.width,
             height: 40
+        )
+        
+        treeView.frame = CGRect(
+            x: Constants.matchCellMargin,
+            y: headerLabel.frame.maxY + Constants.marginMainTB,
+            width: view.frame.width - 2 * Constants.matchCellMargin,
+            height: view.frame.maxY - Constants.bottomBarHeight - Constants.marginMainTB - (headerLabel.frame.maxY + Constants.marginMainTB)
+        )
+        
+        myTree.frame = CGRect(
+            x: Constants.matchCellMargin,
+            y: Constants.matchCellMargin,
+            width: treeView.frame.width - 2 * Constants.matchCellMargin,
+            height: (treeView.frame.width - 2 * Constants.matchCellMargin) * 1.1
         )
 
         layout.invalidateLayout()

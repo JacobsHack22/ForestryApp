@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EF56B93AC0854AADA87AAD4 /* Pods_Forestry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BF6EB05AC872B0D83C773B /* Pods_Forestry.framework */; };
 		75A61AA7291744E00063E73D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AA6291744E00063E73D /* AppDelegate.swift */; };
 		75A61AA9291744E00063E73D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AA8291744E00063E73D /* SceneDelegate.swift */; };
 		75A61AAB291744E00063E73D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AAA291744E00063E73D /* RootViewController.swift */; };
@@ -27,6 +28,9 @@
 		75A61AED29174BC20063E73D /* CollectionViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AEC29174BC20063E73D /* CollectionViewAssembly.swift */; };
 		75A61AF429177A9C0063E73D /* TreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AF329177A9C0063E73D /* TreeCell.swift */; };
 		75A61AF62917903B0063E73D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AF52917903B0063E73D /* NetworkManager.swift */; };
+		75A61AF8291793B70063E73D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AF7291793B70063E73D /* String+Extension.swift */; };
+		75A61AFB29179E830063E73D /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AFA29179E830063E73D /* UserDefaults.swift */; };
+		75A61AFD2917A9330063E73D /* TreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AFC2917A9330063E73D /* TreeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A2BD8C6F44971D076017753 /* Pods-Forestry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forestry.release.xcconfig"; path = "Target Support Files/Pods-Forestry/Pods-Forestry.release.xcconfig"; sourceTree = "<group>"; };
+		39BF6EB05AC872B0D83C773B /* Pods_Forestry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forestry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4224301CC518D215C6E54244 /* Pods-Forestry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forestry.debug.xcconfig"; path = "Target Support Files/Pods-Forestry/Pods-Forestry.debug.xcconfig"; sourceTree = "<group>"; };
 		75A61AA3291744E00063E73D /* Forestry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forestry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A61AA6291744E00063E73D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75A61AA8291744E00063E73D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +78,9 @@
 		75A61AEC29174BC20063E73D /* CollectionViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAssembly.swift; sourceTree = "<group>"; };
 		75A61AF329177A9C0063E73D /* TreeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeCell.swift; sourceTree = "<group>"; };
 		75A61AF52917903B0063E73D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		75A61AF7291793B70063E73D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		75A61AFA29179E830063E73D /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		75A61AFC2917A9330063E73D /* TreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EF56B93AC0854AADA87AAD4 /* Pods_Forestry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EF9D58523251B87BE12B5B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39BF6EB05AC872B0D83C773B /* Pods_Forestry.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		75A61A9A291744E00063E73D = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +124,8 @@
 				75A61ABC291744E10063E73D /* ForestryTests */,
 				75A61AC6291744E10063E73D /* ForestryUITests */,
 				75A61AA4291744E00063E73D /* Products */,
+				D206851308B41CA7F59D205E /* Pods */,
+				3EF9D58523251B87BE12B5B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +142,7 @@
 		75A61AA5291744E00063E73D /* Forestry */ = {
 			isa = PBXGroup;
 			children = (
+				75A61AF929179E740063E73D /* Utils */,
 				75A61ADF291749350063E73D /* Extensions */,
 				75A61AD82917481A0063E73D /* MainViewModule */,
 				75A61AD72917480F0063E73D /* ScanViewModule */,
@@ -188,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				75A61AE0291749460063E73D /* UIView+Extension.swift */,
+				75A61AF7291793B70063E73D /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -196,8 +219,26 @@
 			isa = PBXGroup;
 			children = (
 				75A61AF329177A9C0063E73D /* TreeCell.swift */,
+				75A61AFC2917A9330063E73D /* TreeModel.swift */,
 			);
 			path = TreeCollectionModule;
+			sourceTree = "<group>";
+		};
+		75A61AF929179E740063E73D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				75A61AFA29179E830063E73D /* UserDefaults.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D206851308B41CA7F59D205E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4224301CC518D215C6E54244 /* Pods-Forestry.debug.xcconfig */,
+				0A2BD8C6F44971D076017753 /* Pods-Forestry.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75A61ACD291744E10063E73D /* Build configuration list for PBXNativeTarget "Forestry" */;
 			buildPhases = (
+				C6B2C9727ACF5D89FAECA8D2 /* [CP] Check Pods Manifest.lock */,
 				75A61A9F291744E00063E73D /* Sources */,
 				75A61AA0291744E00063E73D /* Frameworks */,
 				75A61AA1291744E00063E73D /* Resources */,
+				04684D40F56BAD9934A81CFD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -325,15 +368,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04684D40F56BAD9934A81CFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Forestry/Pods-Forestry-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Forestry/Pods-Forestry-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Forestry/Pods-Forestry-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6B2C9727ACF5D89FAECA8D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Forestry-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		75A61A9F291744E00063E73D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A61AF8291793B70063E73D /* String+Extension.swift in Sources */,
 				75A61AE729174B3E0063E73D /* ScanViewPresenter.swift in Sources */,
 				75A61AAB291744E00063E73D /* RootViewController.swift in Sources */,
 				75A61AE329174AC00063E73D /* ScanViewAssembly.swift in Sources */,
 				75A61AE1291749460063E73D /* UIView+Extension.swift in Sources */,
+				75A61AFB29179E830063E73D /* UserDefaults.swift in Sources */,
 				75A61ADA291748400063E73D /* MainViewAssembly.swift in Sources */,
 				75A61AED29174BC20063E73D /* CollectionViewAssembly.swift in Sources */,
 				75A61ADE291748A40063E73D /* MainViewPresenter.swift in Sources */,
@@ -345,6 +432,7 @@
 				75A61AF62917903B0063E73D /* NetworkManager.swift in Sources */,
 				75A61AE929174B8E0063E73D /* CollectionViewController.swift in Sources */,
 				75A61AEB29174BA80063E73D /* CollectionViewPresenter.swift in Sources */,
+				75A61AFD2917A9330063E73D /* TreeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +598,7 @@
 		};
 		75A61ACE291744E10063E73D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4224301CC518D215C6E54244 /* Pods-Forestry.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -537,6 +626,7 @@
 		};
 		75A61ACF291744E10063E73D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A2BD8C6F44971D076017753 /* Pods-Forestry.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
