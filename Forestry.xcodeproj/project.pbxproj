@@ -15,6 +15,18 @@
 		75A61ABE291744E10063E73D /* ForestryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61ABD291744E10063E73D /* ForestryTests.swift */; };
 		75A61AC8291744E10063E73D /* ForestryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AC7291744E10063E73D /* ForestryUITests.swift */; };
 		75A61ACA291744E10063E73D /* ForestryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AC9291744E10063E73D /* ForestryUITestsLaunchTests.swift */; };
+		75A61ADA291748400063E73D /* MainViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AD9291748400063E73D /* MainViewAssembly.swift */; };
+		75A61ADC291748650063E73D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61ADB291748650063E73D /* MainViewController.swift */; };
+		75A61ADE291748A40063E73D /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61ADD291748A40063E73D /* MainViewPresenter.swift */; };
+		75A61AE1291749460063E73D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AE0291749460063E73D /* UIView+Extension.swift */; };
+		75A61AE329174AC00063E73D /* ScanViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AE229174AC00063E73D /* ScanViewAssembly.swift */; };
+		75A61AE529174AE40063E73D /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AE429174AE30063E73D /* ScanViewController.swift */; };
+		75A61AE729174B3E0063E73D /* ScanViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AE629174B3E0063E73D /* ScanViewPresenter.swift */; };
+		75A61AE929174B8E0063E73D /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AE829174B8E0063E73D /* CollectionViewController.swift */; };
+		75A61AEB29174BA80063E73D /* CollectionViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AEA29174BA80063E73D /* CollectionViewPresenter.swift */; };
+		75A61AED29174BC20063E73D /* CollectionViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AEC29174BC20063E73D /* CollectionViewAssembly.swift */; };
+		75A61AF429177A9C0063E73D /* TreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AF329177A9C0063E73D /* TreeCell.swift */; };
+		75A61AF62917903B0063E73D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A61AF52917903B0063E73D /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +59,18 @@
 		75A61AC3291744E10063E73D /* ForestryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForestryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A61AC7291744E10063E73D /* ForestryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForestryUITests.swift; sourceTree = "<group>"; };
 		75A61AC9291744E10063E73D /* ForestryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForestryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		75A61AD9291748400063E73D /* MainViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewAssembly.swift; sourceTree = "<group>"; };
+		75A61ADB291748650063E73D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		75A61ADD291748A40063E73D /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
+		75A61AE0291749460063E73D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		75A61AE229174AC00063E73D /* ScanViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewAssembly.swift; sourceTree = "<group>"; };
+		75A61AE429174AE30063E73D /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		75A61AE629174B3E0063E73D /* ScanViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewPresenter.swift; sourceTree = "<group>"; };
+		75A61AE829174B8E0063E73D /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		75A61AEA29174BA80063E73D /* CollectionViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewPresenter.swift; sourceTree = "<group>"; };
+		75A61AEC29174BC20063E73D /* CollectionViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAssembly.swift; sourceTree = "<group>"; };
+		75A61AF329177A9C0063E73D /* TreeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeCell.swift; sourceTree = "<group>"; };
+		75A61AF52917903B0063E73D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +121,10 @@
 		75A61AA5291744E00063E73D /* Forestry */ = {
 			isa = PBXGroup;
 			children = (
+				75A61ADF291749350063E73D /* Extensions */,
+				75A61AD82917481A0063E73D /* MainViewModule */,
+				75A61AD72917480F0063E73D /* ScanViewModule */,
+				75A61AD6291747FC0063E73D /* CollectionViewModule */,
 				75A61AA6291744E00063E73D /* AppDelegate.swift */,
 				75A61AA8291744E00063E73D /* SceneDelegate.swift */,
 				75A61AAA291744E00063E73D /* RootViewController.swift */,
@@ -122,6 +150,54 @@
 				75A61AC9291744E10063E73D /* ForestryUITestsLaunchTests.swift */,
 			);
 			path = ForestryUITests;
+			sourceTree = "<group>";
+		};
+		75A61AD6291747FC0063E73D /* CollectionViewModule */ = {
+			isa = PBXGroup;
+			children = (
+				75A61AEE291773D50063E73D /* TreeCollectionModule */,
+				75A61AE829174B8E0063E73D /* CollectionViewController.swift */,
+				75A61AEA29174BA80063E73D /* CollectionViewPresenter.swift */,
+				75A61AEC29174BC20063E73D /* CollectionViewAssembly.swift */,
+			);
+			path = CollectionViewModule;
+			sourceTree = "<group>";
+		};
+		75A61AD72917480F0063E73D /* ScanViewModule */ = {
+			isa = PBXGroup;
+			children = (
+				75A61AE229174AC00063E73D /* ScanViewAssembly.swift */,
+				75A61AE429174AE30063E73D /* ScanViewController.swift */,
+				75A61AE629174B3E0063E73D /* ScanViewPresenter.swift */,
+				75A61AF52917903B0063E73D /* NetworkManager.swift */,
+			);
+			path = ScanViewModule;
+			sourceTree = "<group>";
+		};
+		75A61AD82917481A0063E73D /* MainViewModule */ = {
+			isa = PBXGroup;
+			children = (
+				75A61AD9291748400063E73D /* MainViewAssembly.swift */,
+				75A61ADB291748650063E73D /* MainViewController.swift */,
+				75A61ADD291748A40063E73D /* MainViewPresenter.swift */,
+			);
+			path = MainViewModule;
+			sourceTree = "<group>";
+		};
+		75A61ADF291749350063E73D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				75A61AE0291749460063E73D /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		75A61AEE291773D50063E73D /* TreeCollectionModule */ = {
+			isa = PBXGroup;
+			children = (
+				75A61AF329177A9C0063E73D /* TreeCell.swift */,
+			);
+			path = TreeCollectionModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +330,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A61AE729174B3E0063E73D /* ScanViewPresenter.swift in Sources */,
 				75A61AAB291744E00063E73D /* RootViewController.swift in Sources */,
+				75A61AE329174AC00063E73D /* ScanViewAssembly.swift in Sources */,
+				75A61AE1291749460063E73D /* UIView+Extension.swift in Sources */,
+				75A61ADA291748400063E73D /* MainViewAssembly.swift in Sources */,
+				75A61AED29174BC20063E73D /* CollectionViewAssembly.swift in Sources */,
+				75A61ADE291748A40063E73D /* MainViewPresenter.swift in Sources */,
 				75A61AA7291744E00063E73D /* AppDelegate.swift in Sources */,
+				75A61AF429177A9C0063E73D /* TreeCell.swift in Sources */,
 				75A61AA9291744E00063E73D /* SceneDelegate.swift in Sources */,
+				75A61ADC291748650063E73D /* MainViewController.swift in Sources */,
+				75A61AE529174AE40063E73D /* ScanViewController.swift in Sources */,
+				75A61AF62917903B0063E73D /* NetworkManager.swift in Sources */,
+				75A61AE929174B8E0063E73D /* CollectionViewController.swift in Sources */,
+				75A61AEB29174BA80063E73D /* CollectionViewPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

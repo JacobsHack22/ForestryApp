@@ -7,11 +7,37 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class RootViewController: UITabBarController {
+    
+    private var mainViewController: UIViewController = {
+        let vc = MainViewAssembly.createModule()
+        vc.title = MainViewController.Constants.tabBarTitle
+        return vc
+    } ()
+  
+    private var scanViewController: UIViewController = {
+        let vc = ScanViewAssembly.createModule()
+        vc.title = ScanViewController.Constants.tabBarTitle
+        return vc
+    }()
+    
+    private var collectionViewController: UIViewController = {
+        let vc = CollectionViewAssembly.createModule()
+        vc.title = CollectionViewController.Constants.tabBarTitle
+        return vc
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemBackground
+        setViewControllers([collectionViewController, mainViewController, scanViewController], animated: false)
+        
+        guard let items = self.tabBar.items else { return }
+        for i in 0...2 {
+            items[i].image = UIImage(systemName: ["list.bullet.rectangle.fill", "house", "plus"][i])
+        }
+        
+        self.tabBar.tintColor = .systemBlue
         self.view.backgroundColor = .green
     }
 

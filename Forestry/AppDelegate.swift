@@ -18,6 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = RootViewController()
         window.makeKeyAndVisible()
         self.window = window
+        
+        let userDefaults = UserDefaults.standard
+        if userDefaults.object(forKey: "collectionImages") == nil {
+            let array: [String] = []
+            userDefaults.set(array, forKey: "collectionImages")
+            userDefaults.set(array, forKey: "collectionNames")
+        }
+        
         return true
     }
 
